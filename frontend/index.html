@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Three Tier App</title>
+</head>
+<body>
+<h1>Web Tier Working</h1>
+<button onclick="loadData()">Test Backend</button>
+<p id="output"></p>
+
+<script>
+function loadData() {
+fetch("http://http://alb-3-tier-1179989919.ap-south-1.elb.amazonaws.com//data") //it is the alb dns
+.then(response => response.text())
+.then(data => {
+document.getElementById("output").innerText = data;
+});
+}
+</script>
+</body>
+</html>
